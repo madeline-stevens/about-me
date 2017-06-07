@@ -1,3 +1,20 @@
-h1 {
-  color: blue;
+html {
+  height: 100%;
+}
+body {
+   background-color: #86BBC5;
+}
+
+}
+nav {
+    font-size: 20pt;
+}
+
+p {
+  font-size: 20pt
+}
+
+img {
+  height: 256px;
+  width: 210px;
 }
