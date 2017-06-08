@@ -1,5 +1,6 @@
 'use strict';
 
+var rightAnswers = 0;
 var userName = prompt('Hey, before we start the quiz on Maddy, what is your name?').toUpperCase();
 alert('Very nice to meet you ' + userName + '. I always need new friends.');
 console.log('I first asked the user for their name, to help personalize the experience, and then said it was nice to meet them.');
@@ -8,15 +9,17 @@ console.log('I first asked the user for their name, to help personalize the expe
 var city = prompt('Question #1: Is Maddy from Dallas? Yes or No.').toUpperCase();
 if (city === 'NO') {
   alert ('Correct!');
+  rightAnswers++;
 } else {
   alert ('Incorrect...moving on!');
 };
-console.log('Then I asked my first yes or no question, if the user answers correctly they get a Correct! confirmation if not they are told to move on. Yes or No.');
+console.log('Then I asked my first yes or no question, if the user answers correctly they get a Correct! confirmation if not they are told to move on. Yes or No. ALSO NEED TO ADD AN IF/ELSE FOR IF USER DOES NOT WRITE A PASSABLE ANSWER');
 
 //question #2 of yes or no questions
 var leastFavoriteFood = prompt ('Question #2: Does Maddy like french toast? Yes or No.').toUpperCase();
 if (leastFavoriteFood === 'NO') {
   alert ('Correct!');
+  rightAnswers++;
 }
 else {
   alert ('Incorrect...moving on!');
@@ -78,6 +81,7 @@ while (attempts > 0) {
   //alert ('Sorry, you ran out of guesses.'');
   // counter = 0;
 }
+user
 console.log ('!!!!!!After the four attempts, I DO NOT have a message saying that the user is done!!!');
 
 //question #7- my second numeric input question
@@ -102,5 +106,4 @@ while (guessesLeft > 0) {
       //alert ('userName, You got '+ 'correctAnswers' + ' out of 7 questions correct! Good job!');
     }
   }
-
 }
