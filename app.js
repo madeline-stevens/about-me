@@ -70,27 +70,32 @@ while (attempts > 0) {
     alert ('Correct! Most of them are soccer related...⚽️');
     attempts = 0; // this is what sets the while loop to 0, thus making it false, and exiting the loop
   }
-  else
+  else //if?
   alert ('Incorrect! Number too low! Keep trying!');
   attempts--;
-};
-console.log ('After the four attempts, I do not have a message saying that the user is done!!!');
+
+  //} else {
+  //alert ('Sorry, you ran out of guesses.'');
+  // counter = 0;
+}
+console.log ('!!!!!!After the four attempts, I DO NOT have a message saying that the user is done!!!');
 
 //question #7- my second numeric input question
 var whichBone = ['shoulder', 'knee', 'finger', 'wrist'];
-var guessesLeft = 6;
+var guessesLeft = 6; // sam added the derement right after this line of code, mine is on line 98
+
 while (guessesLeft > 0) {
   var answer = prompt ('Next question: You have six attempts to try to correctly guess just ONE of my broken bones. No need to be too specific.');
   for (var i = 0; i < whichBone.length; i++) {
     if (answer === whichBone[i]){
       alert ('Correct! You are all done!');
-      guessesLeft = 0;
-      break; //get out of the for loop??
+      guessesLeft = 0; //kicks us out of of the while
+      break; //get out of the for loop // a trick for ian's #6 was using guessesLeft = -1; instead of break or guessesLeft= 0; becuase that will also make the prompt false.
     }
   }
   if (guessesLeft > 0) { //get out of the while loop???
     guessesLeft--;
-    alert ('Incorrect! You have ' + guessesLeft + ' attempts left! Keep trying!');
+    alert ('Incorrect! You have ' + guessesLeft + ' attempts left!');
     if (guessesLeft === 0) {
       alert ('And you are out of guesses! And done with the quiz!');//message if there are attempts left
       console.log ('I STILL NEED TO INCLUDE THE LAST MESSAGE ABOUT HOW MANY QUESTIONS THE USER GOT CORRECT! need to add correctAnswers++; , still need to make sure the upperCase is correct??? ');
