@@ -8,116 +8,112 @@ console.log('I first asked the user for their name, to help personalize the expe
 //question #1 of yes or no questions
 var city = prompt('Question #1: Is Maddy from Dallas? Yes or No.').toUpperCase();
 function question1 () {
-if (city === 'NO') {
-  alert ('Correct!');
-  rightAnswers++;
-} else {
-  alert ('Incorrect...moving on!');
+  if (city === 'NO') {
+    alert ('Correct!');
+    rightAnswers++;
+  } else {
+    alert ('Incorrect...moving on!');
+  }
+}
+question1 ();
 
 var leastFavoriteFood = prompt ('Question #2: Does Maddy like french toast? Yes or No.').toUpperCase();
 function question2 () {
-if (leastFavoriteFood === 'NO') {
-  alert ('Correct!');
-  rightAnswers++;
-}
-else {
-  alert ('Incorrect...moving on!');
-};
-console.log('Then I asked my second yes or no question, if the user answers correctly they get a Correct! confirmation if not they are told to move on.');
+  if (leastFavoriteFood === 'NO') {
+    alert ('Correct!');
+    rightAnswers++;
+  }
+  else {
+    alert ('Incorrect...moving on!');
+  };
+  console.log('Then I asked my second yes or no question, if the user answers correctly they get a Correct! confirmation if not they are told to move on.');
 }
 question2 ();
 //question #3 of yes or no questions
 var school = prompt ('Question #3: Did kids call Maddy snaggletooth Stevens in elementary school?').toUpperCase();
 function question3 () {
-if (school === 'YES') {
-  alert ('Correct!');
-}
-else {
-  alert ('Incorrect...moving on!');
-};
-console.log('Then I asked my third yes or no question, if the user answers correctly they get a Correct! confirmation if not they are told to move on.');
+  if (school === 'YES') {
+    alert ('Correct!');
+  }
+  else {
+    alert ('Incorrect...moving on!');
+  };
+  console.log('Then I asked my third yes or no question, if the user answers correctly they get a Correct! confirmation if not they are told to move on.');
 }
 question3 ();
 //question #4 of yes or no questions
 var job = prompt ('Did Maddy help reset over 3,000 apple IDs at the Apple store?').toUpperCase();
 function question4 () {
-if (job === 'YES') {
-  alert ('Correct!');
-}
-else {
-  alert ('Incorrect...moving on!');
-};
-console.log('Then I asked my fourth yes or no question, if the user answers correctly they get a Correct! confirmation if not they are told to move on.');
+  if (job === 'YES') {
+    alert ('Correct!');
+  }
+  else {
+    alert ('Incorrect...moving on!');
+  };
+  console.log('Then I asked my fourth yes or no question, if the user answers correctly they get a Correct! confirmation if not they are told to move on.');
 }
 question4 ();
 //question #5 of yes or no  questions
 var goals = prompt ('Is there a pug farm in Maddy\'s future?').toUpperCase();
 function question5 () {
-if (goals === 'YES') {
-  alert ('Correct!');
-}
-else {
-  alert ('Incorrect...moving on!');
-};
-console.log('Then I asked my fifth yes or no question, if the user answers correctly they get a Correct! confirmation if not they are told to move on.');
+  if (goals === 'YES') {
+    alert ('Correct!');
+  }
+  else {
+    alert ('Incorrect...moving on!');
+  };
+  console.log('Then I asked my fifth yes or no question, if the user answers correctly they get a Correct! confirmation if not they are told to move on.');
 }
 question5 ();
 // question #6- my first numeric input question with four guesses
 var correctNumber = 4;
 var attempts = 4;
 function question6 () {
-while (attempts > 0) {
-  var answer = parseInt(prompt ('You have four attempts to guess how many bones Maddy has broken?')); //by default a prompt method will turn even a numeric answer into the string data type, parseInt will convert to a true number data type.
-  if (answer < correctNumber) {
-    alert ('Incorrect! Number too low! Keep trying!'); // I took out attempts--; following this line of code to test whether the counting down would work- this was a success!!!
-  }
-  else if (answer > correctNumber) {
-    alert ('Incorrect! Number too high! Keep trying!');
+  while (attempts > 0) {
+    var answer = parseInt(prompt ('You have four attempts to guess how many bones Maddy has broken?')); //by default a prompt method will turn even a numeric answer into the string data type, parseInt will convert to a true number data type.
+    if (answer < correctNumber) {
+      alert ('Incorrect! Number too low! Keep trying!'); // I took out attempts--; following this line of code to test whether the counting down would work- this was a success!!!
+    }
+    else if (answer > correctNumber) {
+      alert ('Incorrect! Number too high! Keep trying!');
+      attempts--;
+    }
+    else if (answer === correctNumber) {
+      alert ('Correct! Most of them are soccer related...⚽️');
+      attempts = 0; // this is what sets the while loop to 0, thus making it false, and exiting the loop
+    }
+    else //if?
+    alert ('Incorrect! Number too low! Keep trying!');
     attempts--;
-  }
-  else if (answer === correctNumber) {
-    alert ('Correct! Most of them are soccer related...⚽️');
-    attempts = 0; // this is what sets the while loop to 0, thus making it false, and exiting the loop
-  }
-  else //if?
-  alert ('Incorrect! Number too low! Keep trying!');
-  attempts--;
 
-  // } else {
-  // alert ('Sorry, you ran out of guesses.');
-  // counter = 0;
-}
-<<<<<<< HEAD
-user
-console.log ('!!!!!!After the four attempts, I DO NOT have a message saying that the user is done!!!');
-
-=======
-console.log ('!!!!!!After the four attempts, I DO NOT have a message saying that the user is done!!!'); //console.log('User replied with ' + answer);
+    // } else {
+    // alert ('Sorry, you ran out of guesses.');
+    // counter = 0;
+  }
 }
 question6 ();
->>>>>>> c7a81d4686fcc3b075054481e4c2da692188fcd5
 //question #7- my second numeric input question
 var whichBone = ['shoulder', 'knee', 'finger', 'wrist'];
 var guessesLeft = 6; // sam added the derement right after this line of code, mine is on line 98
-function question7 () {
-while (guessesLeft > 0) {
-  var answer = prompt ('Next question: You have six attempts to try to correctly guess just ONE of my broken bones. No need to be too specific.');
-  for (var i = 0; i < whichBone.length; i++) {
-    if (answer === whichBone[i]){
-      alert ('Correct! You are all done!');
-      guessesLeft = 0; //kicks us out of of the while
-      break; //get out of the for loop // a trick for ian's #6 was using guessesLeft = -1; instead of break or guessesLeft= 0; becuase that will also make the prompt false.
+function question7() {
+  while (guessesLeft > 0) {
+    var answer = prompt ('Next question: You have six attempts to try to correctly guess just ONE of my broken bones. No need to be too specific.');
+    for (var i = 0; i < whichBone.length; i++) {
+      if (answer === whichBone[i]){
+        alert ('Correct! You are all done!');
+        guessesLeft = 0; //kicks us out of of the while
+        break; //get out of the for loop // a trick for ian's #6 was using guessesLeft = -1; instead of break or guessesLeft= 0; becuase that will also make the prompt false.
+      }
+    }
+    if (guessesLeft > 0) { //get out of the while loop???
+      guessesLeft--;
+      alert ('Incorrect! You have ' + guessesLeft + ' attempts left!');
+      if (guessesLeft === 0) {
+        alert ('And you are out of guesses! And done with the quiz!');//message if there are attempts left
+        console.log ('I STILL NEED TO INCLUDE THE LAST MESSAGE ABOUT HOW MANY QUESTIONS THE USER GOT CORRECT! need to add correctAnswers++; , still need to make sure the upperCase is correct??? ');
+        //alert ('userName, You got '+ 'correctAnswers' + ' out of 7 questions correct! Good job!');
+      }
     }
   }
-  if (guessesLeft > 0) { //get out of the while loop???
-    guessesLeft--;
-    alert ('Incorrect! You have ' + guessesLeft + ' attempts left!');
-    if (guessesLeft === 0) {
-      alert ('And you are out of guesses! And done with the quiz!');//message if there are attempts left
-      console.log ('I STILL NEED TO INCLUDE THE LAST MESSAGE ABOUT HOW MANY QUESTIONS THE USER GOT CORRECT! need to add correctAnswers++; , still need to make sure the upperCase is correct??? ');
-      //alert ('userName, You got '+ 'correctAnswers' + ' out of 7 questions correct! Good job!');
-    }
-  }
-}
 }
 question7 ();
