@@ -1,70 +1,29 @@
 'use strict';
+var rightAnswer = 0;
+var yesNoArray = [
+  ['Question #1: Is Maddy from Dallas? Yes or No', ['no', 'n'] , 'Correct!', 'Incorrect!'],
+  ['Question #2: Does Maddy like french toast? Yes or No.', ['no', 'n'], 'Correct!', 'Incorrect!'],
+  ['Question #3: Did kids call Maddy snaggletooth Stevens in elementary school? Yes or No.', ['yes', 'y'], 'Correct!', 'Incorrect!'],
+  ['Question #4: Did Maddy help reset over 3,000 apple IDs at the Apple store? Yes or No.', ['yes', 'y'], 'Correct!', 'Incorrect!'],
+  ['Question #5: Is there a pug farm in Maddy\'s future? Yes or No.', ['yes', 'y'], 'Correct!', 'Incorrect!']
+];
+function yesNoGame(question, answer, correctAlert, incorrectAlert){
+  var userAnswer = prompt(question).toLowerCase();
 
-var rightAnswers = 0;
-var userName = prompt('Hey, before we start the quiz on Maddy, what is your name?').toUpperCase();
-alert('Very nice to meet you ' + userName + '. I always need new friends.');
-console.log('I first asked the user for their name, to help personalize the experience, and then said it was nice to meet them.');
+  if (answer.includes(userAnswer)) { //answer.includes is what is running through the array checking the userAnswer for matches?
+    rightAnswer++;
+    alert('Correct!');
+  }
+  else {
+    alert('Incorrect!');
+  }
 
-//question #1 of yes or no questions
-var city = prompt('Question #1: Is Maddy from Dallas? Yes or No.').toUpperCase();
-function question1 () {
-  if (city === 'NO') {
-    alert ('Correct!');
-    rightAnswers++;
-  } else {
-    alert ('Incorrect...moving on!');
-  }
 }
-question1 ();
 
-var leastFavoriteFood = prompt ('Question #2: Does Maddy like french toast? Yes or No.').toUpperCase();
-function question2 () {
-  if (leastFavoriteFood === 'NO') {
-    alert ('Correct!');
-    rightAnswers++;
-  }
-  else {
-    alert ('Incorrect...moving on!');
-  };
-  console.log('Then I asked my second yes or no question, if the user answers correctly they get a Correct! confirmation if not they are told to move on.');
+for (var i = 0; i < yesNoArray.length; i++) {
+  yesNoGame(yesNoArray[i][0], yesNoArray[i][1], yesNoArray[i][2], yesNoArray[i][3]);
 }
-question2 ();
-//question #3 of yes or no questions
-var school = prompt ('Question #3: Did kids call Maddy snaggletooth Stevens in elementary school?').toUpperCase();
-function question3 () {
-  if (school === 'YES') {
-    alert ('Correct!');
-  }
-  else {
-    alert ('Incorrect...moving on!');
-  };
-  console.log('Then I asked my third yes or no question, if the user answers correctly they get a Correct! confirmation if not they are told to move on.');
-}
-question3 ();
-//question #4 of yes or no questions
-var job = prompt ('Did Maddy help reset over 3,000 apple IDs at the Apple store?').toUpperCase();
-function question4 () {
-  if (job === 'YES') {
-    alert ('Correct!');
-  }
-  else {
-    alert ('Incorrect...moving on!');
-  };
-  console.log('Then I asked my fourth yes or no question, if the user answers correctly they get a Correct! confirmation if not they are told to move on.');
-}
-question4 ();
-//question #5 of yes or no  questions
-var goals = prompt ('Is there a pug farm in Maddy\'s future?').toUpperCase();
-function question5 () {
-  if (goals === 'YES') {
-    alert ('Correct!');
-  }
-  else {
-    alert ('Incorrect...moving on!');
-  };
-  console.log('Then I asked my fifth yes or no question, if the user answers correctly they get a Correct! confirmation if not they are told to move on.');
-}
-question5 ();
+
 // question #6- my first numeric input question with four guesses
 var correctNumber = 4;
 var attempts = 4;
@@ -85,10 +44,6 @@ function question6 () {
     else //if?
     alert ('Incorrect! Number too low! Keep trying!');
     attempts--;
-
-    // } else {
-    // alert ('Sorry, you ran out of guesses.');
-    // counter = 0;
   }
 }
 question6 ();
