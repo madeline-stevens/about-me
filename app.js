@@ -8,7 +8,7 @@ var yesNoArray = [
   ['Question #5: Is there a pug farm in Maddy\'s future? Yes or No.', ['yes', 'y'], 'Correct!', 'Incorrect!']
 ];
 function yesNoGame(question, answer, correctAlert, incorrectAlert){
-  var userAnswer = prompt(question).toLowerCase();
+  var userAnswer = prompt(question).toLowerCase(); //
 
   if (answer.includes(userAnswer)) { //answer.includes is what is running through the array checking the userAnswer for matches?
     rightAnswer++;
@@ -22,7 +22,7 @@ function yesNoGame(question, answer, correctAlert, incorrectAlert){
 
 for (var i = 0; i < yesNoArray.length; i++) {
   yesNoGame(yesNoArray[i][0], yesNoArray[i][1], yesNoArray[i][2], yesNoArray[i][3]);
-}
+} //the first parameter value, yesNoArray [i][0], becomes question, yesNoArray [i][1] becomes [no, n], 
 
 // question #6- my first numeric input question with four guesses
 var correctNumber = 4;
