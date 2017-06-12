@@ -1,20 +1,106 @@
-html {
+html{
   height: 100%;
 }
 
-body {
-   background-color: #86BBC5;
+body{
+  margin: 15px;
+  padding: 15px;
+  background-color: #86BBC5;
 }
 
-nav {
+#menu{
+  width:1090px;
+  height:40px;
+  font-size: 15px;
+  font-family:CenturyGothic;
+  font-weight:bold;
+  text-align: center;
+  background-color: lightblue;
+  border-radius: 8px;
+}
+
+#menu ul{
+  height: auto;
+  padding: 10px 0px;
+  margin: 0px;
+}
+
+#menu li{
+  display: inline;
+  padding: 10px;
+}
+
+#menu a{
+  text-decoration: none;
+  color: black;
+  padding: 8px 8px 8px 8px;
+}
+
+#menu a:hover{
+  color: black;
+  background-color: #86BBC5;
+  border-radius: 8px;
+}
+
+.container{
+  display: flex;
+  border: 2px;
+  padding: 60px;
+  margin: 20px;
+
+}
+
+/*
+.nav ul {
     font-size: 20pt;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}*/
+
+/*ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; //research
+  background-color: Lime;
+  text-decoration: none;
+}*/
+
+/*.nav li {
+  float: inline;
+  font-family: CenturyGothic;
+  font-size: 14pt;
+  line-height: 40px;
 }
 
-p {
-  font-size: 20pt
+.nav a {
+  color: black;
+  display: block;
 }
 
-img {
+.nav a:hover {
+  background-color: lightblue;
+}
+
+.nav a.active {
+  background-color: Lime;
+  color: red;
+  cursor: default;
+}
+
+li a {
+  display: block;
+  color: black;
+
+  padding: 14px 16px;
+}*/
+
+p{
+  font-size: 20pt;
+}
+
+img{
   height: 256px;
   width: 210px;
 }
