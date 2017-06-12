@@ -1,5 +1,6 @@
 'use strict';
 var rightAnswer = 0;
+var question = prompt ('Hello! What is your name?');
 var yesNoArray = [
   ['Question #1: Is Maddy from Dallas? Yes or No', ['no', 'n'] , 'Correct!', 'Incorrect!'],
   ['Question #2: Does Maddy like french toast? Yes or No.', ['no', 'n'], 'Correct!', 'Incorrect!'],
@@ -9,7 +10,6 @@ var yesNoArray = [
 ];
 function yesNoGame(question, answer, correctAlert, incorrectAlert){
   var userAnswer = prompt(question).toLowerCase(); //
-
   if (answer.includes(userAnswer)) { //answer.includes is what is running through the array checking the userAnswer for matches?
     rightAnswer++;
     alert('Correct!');
@@ -17,12 +17,11 @@ function yesNoGame(question, answer, correctAlert, incorrectAlert){
   else {
     alert('Incorrect!');
   }
-
 }
 
 for (var i = 0; i < yesNoArray.length; i++) {
   yesNoGame(yesNoArray[i][0], yesNoArray[i][1], yesNoArray[i][2], yesNoArray[i][3]);
-} //the first parameter value, yesNoArray [i][0], becomes question, yesNoArray [i][1] becomes [no, n], 
+} //the first parameter value, yesNoArray [i][0], becomes question, yesNoArray [i][1] becomes [no, n],
 
 // question #6- my first numeric input question with four guesses
 var correctNumber = 4;
@@ -47,28 +46,27 @@ function question6 () {
   }
 }
 question6 ();
-//question #7- my second numeric input question
+//question #7- my second numeric input question with six gueses
 var whichBone = ['shoulder', 'knee', 'finger', 'wrist'];
 var guessesLeft = 6; // sam added the derement right after this line of code, mine is on line 98
 function question7() {
   while (guessesLeft > 0) {
-    var answer = prompt ('Next question: You have six attempts to try to correctly guess just ONE of my broken bones. No need to be too specific.');
+    var answer = prompt ('You have six attempts to try to correctly guess just ONE of my broken bones. No need to be too specific.');
     for (var i = 0; i < whichBone.length; i++) {
       if (answer === whichBone[i]){
         alert ('Correct! You are all done!');
         guessesLeft = 0; //kicks us out of of the while
-        break; //get out of the for loop // a trick for ian's #6 was using guessesLeft = -1; instead of break or guessesLeft= 0; becuase that will also make the prompt false.
+        break; //get out of the for loop // a trick for ian's #6 was using guessesLeft = -1; instead of break or guessesLeft= 0; this will also make the prompt false.
       }
     }
     if (guessesLeft > 0) { //get out of the while loop???
       guessesLeft--;
       alert ('Incorrect! You have ' + guessesLeft + ' attempts left!');
       if (guessesLeft === 0) {
-        alert ('And you are out of guesses! And done with the quiz!');//message if there are attempts left
-        console.log ('I STILL NEED TO INCLUDE THE LAST MESSAGE ABOUT HOW MANY QUESTIONS THE USER GOT CORRECT! need to add correctAnswers++; , still need to make sure the upperCase is correct??? ');
-        //alert ('userName, You got '+ 'correctAnswers' + ' out of 7 questions correct! Good job!');
       }
     }
   }
 }
 question7 ();
+
+alert ('userName, you got ' + rightAnswer + ' out of 7 questions correct! Good job!');
